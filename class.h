@@ -29,8 +29,6 @@ public:
 
 class DecisionTree{
 private:
-	Node* root;
-
 	bool SameType(DataSet& dataSet);
 	bool AllFeatureUsed(DataSet& dataSet);
 	bool SameFeatures(DataSet& dataSet);
@@ -42,8 +40,10 @@ private:
 	vector<DataSet> SubSetMaker(DataSet& dataSet, int index, bool useFeature = false);	//Subset maker for index th feature. useFeature = false when calculate gain, useFeature = true when generate son nodes.
 	float Entropy(DataSet& dataSet);
 public:
+	Node* root;
+
 	DecisionTree(DataSet& dataSet);
 
-	void PrintTree();
+	void PrintTreeStructure(Node* node, vector<int>& featureTable);
 };
 #endif

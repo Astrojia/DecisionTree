@@ -239,8 +239,16 @@ float DecisionTree::Entropy(DataSet& dataSet){
 	return entropy;
 }
 
-void DecisionTree::PrintTree(){
-
-
+void DecisionTree::PrintTreeStructure(Node* node, vector<int>& featureTable){
+	if (node->isLeaf){
+		cout << "Is type " << node->featureIndex << endl;
+		return;
+	}
+	cout << "Feature " << node->featureIndex << "on this node" << endl;
+	if (featureTable[node->featureIndex] == 0)
+		cout << "dividingPoint is " << node->dividingPoint << endl;
+	for (int i = 0; i < node->nodes.size(); ++i)
+		PrintTreeStructure(node->nodes[i], featureTable);
+	return;
 }
 

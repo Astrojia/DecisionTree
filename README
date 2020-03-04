@@ -1,0 +1,10 @@
+Decision Tree based on Zhou Zhihua's machine learning.
+
+Training set here is watermelon dataset 3.0 from Zhou Zhihua's machine learning.
+
+How to use
+1. make
+2. ./DecisionTree ./train.dat
+output tree structure
+
+
